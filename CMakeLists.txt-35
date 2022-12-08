@@ -1,0 +1,106 @@
+cmake_minimum_required(VERSION 3.20)
+project(myNS3inClion)
+
+set(CMAKE_CXX_STANDARD 14)
+set(SOURCE attack/ManetAttack.cpp attack/aodv_routing_protocol_blackhole.cpp) # bisa lebih dari 1 file
+#set(SOURCE blackhole.cpp) # bisa lebih dari 1 file
+
+#cmake_minimum_required(VERSION 3.20)
+#project(PraktikWSN_22)
+
+set(NSROOTDIR )
+set(CMAKE_CXX_STANDARD 14)
+
+set(NS3BUILDDIR /Users/ahmadyulianto/WSN-NS3/ns-allinone-3.35/ns-3.35/build)
+#/Users/ahmadyulianto/WSN-NS3/ns-3.35
+find_library(NSLIB01 ns3.35-antenna-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB02 ns3.35-antenna-test-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB03 ns3.35-aodv-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB04 ns3.35-aodv-test-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB05 ns3.35-applications-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB06 ns3.35-applications-test-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB07 ns3.35-bridge-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB08 ns3.35-buildings-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB09 ns3.35-buildings-test-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB10 ns3.35-config-store-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB11 ns3.35-core-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB12 ns3.35-core-test-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB13 ns3.35-csma-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB14 ns3.35-csma-layout-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB15 ns3.35-dsdv-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB16 ns3.35-dsdv-test-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB17 ns3.35-dsr-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB18 ns3.35-dsr-test-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB19 ns3.35-energy-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB20 ns3.35-energy-test-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB21 ns3.35-fd-net-device-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB22 ns3.35-flow-monitor-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB23 ns3.35-flow-monitor-test-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB24 ns3.35-internet-apps-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB25 ns3.35-internet-apps-test-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB26 ns3.35-internet-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB27 ns3.35-internet-test-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB28 ns3.35-lr-wpan-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB29 ns3.35-lr-wpan-test-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB30 ns3.35-lte-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB31 ns3.35-lte-test-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB32 ns3.35-mesh-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB33 ns3.35-mesh-test-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB34 ns3.35-mobility-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB35 ns3.35-mobility-test-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB36 ns3.35-netanim-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB37 ns3.35-netanim-test-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB38 ns3.35-network-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB39 ns3.35-network-test-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB40 ns3.35-nix-vector-routing-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB41 ns3.35-nix-vector-routing-test-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB42 ns3.35-olsr-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB43 ns3.35-olsr-test-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB44 ns3.35-point-to-point-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB45 ns3.35-point-to-point-layout-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB46 ns3.35-point-to-point-test-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB47 ns3.35-propagation-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB48 ns3.35-propagation-test-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB49 ns3.35-sixlowpan-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB50 ns3.35-sixlowpan-test-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB51 ns3.35-spectrum-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB52 ns3.35-spectrum-test-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB53 ns3.35-stats-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB54 ns3.35-stats-test-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB55 ns3.35-test-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB56 ns3.35-test-test-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB57 ns3.35-topology-read-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB58 ns3.35-topology-read-test-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB59 ns3.35-traffic-control-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB60 ns3.35-traffic-control-test-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB61 ns3.35-uan-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB62 ns3.35-uan-test-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB63 ns3.35-virtual-net-device-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB64 ns3.35-visualizer-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB65 ns3.35-wave-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB66 ns3.35-wave-test-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB67 ns3.35-wifi-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB68 ns3.35-wifi-test-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB69 ns3.35-wimax-debug PATHS ${NS3BUILDDIR}/lib)
+find_library(NSLIB70 ns3.35-wimax-test-debug PATHS ${NS3BUILDDIR}/lib)
+
+#set(SOURCE dsdv.cpp dsr.cpp)
+
+#add_executable(myMain main.cpp)
+#set(SOURCE simple-aodv.cpp)
+add_executable(${PROJECT_NAME} ${SOURCE})
+target_include_directories(${PROJECT_NAME} PUBLIC ${NS3BUILDDIR})
+#target_include_directories(myNS3inClion PUBLIC ${NS3BUILDDIR})
+
+target_link_libraries(${PROJECT_NAME}
+        ${NSLIB01}	${NSLIB11}	${NSLIB21}	${NSLIB31}	${NSLIB41}	${NSLIB51}	${NSLIB61}
+        ${NSLIB02}	${NSLIB12}	${NSLIB22}	${NSLIB32}	${NSLIB42}	${NSLIB52}	${NSLIB62}
+        ${NSLIB03}	${NSLIB13}	${NSLIB23}	${NSLIB33}	${NSLIB43}	${NSLIB53}	${NSLIB63}
+        ${NSLIB04}	${NSLIB14}	${NSLIB24}	${NSLIB34}	${NSLIB44}	${NSLIB54}	${NSLIB64}
+        ${NSLIB05}	${NSLIB15}	${NSLIB25}	${NSLIB35}	${NSLIB45}	${NSLIB55}	${NSLIB65}
+        ${NSLIB06}	${NSLIB16}	${NSLIB26}	${NSLIB36}	${NSLIB46}	${NSLIB56}	${NSLIB66}
+        ${NSLIB07}	${NSLIB17}	${NSLIB27}	${NSLIB37}	${NSLIB47}	${NSLIB57}	${NSLIB67}
+        ${NSLIB08}	${NSLIB18}	${NSLIB28}	${NSLIB38}	${NSLIB48}	${NSLIB58}	${NSLIB68}
+        ${NSLIB09}	${NSLIB19}	${NSLIB29}	${NSLIB39}	${NSLIB49}	${NSLIB59}	${NSLIB69}
+        ${NSLIB10}	${NSLIB20}	${NSLIB30}	${NSLIB40}	${NSLIB50}	${NSLIB60}	${NSLIB70}
+        )
